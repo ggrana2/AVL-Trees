@@ -1,0 +1,67 @@
+# Assignment "code2"
+
+**Summary:** For this homework you finish implementing an AVLTree
+class.  AVLTree extends BST, which is a simple binary search tree
+(just a set of keys, not a symbol table).  When you are done, you
+submit your AVLTree.java file on Canvas.
+
+## Preparation
+
+Read both [BST.java](BST.java) and [AVLTree.java](AVLTree.java).  You
+will not edit BST.java; you only edit AVLTree.java.  The comments in
+AVLTree.java describe what you need to do.  In particular, you really
+only need to override the *fixup* method. It should do "trinode
+restructuring" when needed, as described in the
+[AVLTrees.pdf](https://cs.emory.edu/~cs253002/share/0915/AVLTrees.pdf)
+slides.  *fixup* is already being called where needed in the BST
+*insert* and *remove* methods, so you do not need to override those.
+
+Note the Node class (defined inside BST.java) does not have a parent link.
+Each Node stores just a Key, no value. Each Node has a
+size field and a height field.  The size field supports t.get(rank),
+t.rank(k), and the iterator.
+
+The BST class also defines a fail-fast iterator (class RankIterator),
+but you do not need to modify that.
+
+## Testing
+
+There are two testing programs, [Demo.java](Demo.java) and
+[Tests.java](Tests.java).  Use the Demo program to run small
+interactive tests:
+
+      javac *.java
+      java Demo
+
+The above usage expects you to enter some numbers with the keyboard.
+You may instead read a prepared input from a file.  We have two files
+prepared, [demo1.txt](demo1.txt) and [demo2.txt](demo2.txt),
+you are welcome to write your own.  You can read input from
+a file in either of these two ways:
+
+      java Demo < demo1.txt
+
+or
+
+      java Demo demo2.txt
+
+The Demo program prints the tree contents in sorted order, with
+indentation to indicate the tree structure.
+
+Use the Tests program to run some more extensive non-interactive
+tests.  First it does some small test cases, followed by a timing test
+(comparing the speed of your AVLTree with java.util.TreeSet, which is
+a red-black tree):
+
+      javac *.java
+      java Tests
+
+If your time ratio is at most 2.0, then it is fast enough.
+
+## Submission
+
+When you are done, or you just want to quit, submit your AVLTree.java
+as the Canvas "code2" assignment.  Check that page for any further
+requirements or extra credit.  You may add a "comment" to your Canvas
+submission, if any issues remain.
+
